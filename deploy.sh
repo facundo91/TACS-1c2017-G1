@@ -1,28 +1,27 @@
 mkdir -p logs
 FILE="logs/deploy-`date --iso-8601=seconds`.log"
 touch $FILE
-echo "[`date --iso-8601=seconds`]: Hello" >> $FILE
+echo "[`date --iso-8601=seconds`]: Logging" >> $FILE
 cat src/main/resources/asciiart.txt
-echo "Compilar front end? Necesita tener instalado npm (y/n)"
+echo "Deploy front end? (y/n)"
 read front
 
 if [ "$front" = "y" ]; then
 #Compiling the front-end
-echo 'Compiling front end'
+echo 'Deploying front end'
 cd src/main/resources/static/
-sudo npm install && gulp concat
+sudo npm install && gulp make
 cd ../../../../
 fi
 
 
-echo "Compilar back end? (y/n)"
+echo "Deploy back end? (y/n)"
 read back
 
 if [ "$back" = "y" ]; then
 #Install the project
 echo 'Making project'
-mvn clean install -DskipTests -P openshift |& tee -a $FILE
-#echo "[`date --iso-8601=seconds`]: `mvn clean install -DskipTests -P openshift`" >> $FILE
+mvn clean install -DskipTests -P openshift
 #Move the Web Archive File to the Tomcat root
 echo 'Moving WAR to Tomcat root'
 sudo cp webapps/*.war /opt/tomcat/webapps/

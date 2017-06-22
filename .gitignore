@@ -18,4 +18,5 @@
 *.iml
 logs/
 **style.css
+*bundle.js
 **/node_modules/

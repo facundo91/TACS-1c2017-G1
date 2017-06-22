@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 // Static server
 // Tarea: compilar
 // Correr un server local para la interfaz grafica. Si se modifica algun script, estilo o html, recarga el browser automaticamente.
-gulp.task('compilar', ['concat', 'less'], function() {
+gulp.task('compilar', ['make'], function() {
   browserSync.init({
     server: {
       baseDir: "./"
@@ -19,6 +19,8 @@ gulp.task('compilar', ['concat', 'less'], function() {
   gulp.watch('styles/**/*.less', ['less']).on('change', browserSync.reload);
   gulp.watch("**/*.html").on('change', browserSync.reload);
 });
+
+gulp.task('make',['concat','less']);
 
 // Tarea: concat
 // Archivos: Todos los js en directorio y subdirectorios de /dev/src/
@@ -37,7 +39,7 @@ gulp.task('concat', function() {
 // Generar un solo archivo css del archivo en cuestion y sus importados
 // Destino: dev/style.css
 gulp.task('less', function() {
-  return gulp.src('/styles/mainStyle.less')
+  return gulp.src('styles/mainStyle.less')
     .pipe(sourcemaps.init())
     .pipe(less({
       paths: [path.join(__dirname, 'less', 'includes')]
