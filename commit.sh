@@ -1,4 +1,4 @@
-echo "Commit bundle.js? (y/n)"
+echo "Commit bundle.js or style.css? (y/n)"
 read commitBundle
 
 if [ "$commitBundle" = "y" ]; then
