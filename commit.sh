@@ -8,8 +8,13 @@ else
   git update-index --assume-unchanged src/main/resources/static/bundle.js
   git update-index --assume-unchanged src/main/resources/static/style.css
 fi
-git add -A
-echo "Enter commit comment"
-read comment
-git commit -m "$comment"
-git push
+
+if [[ `git status --porcelain` ]]; then
+  git add -A
+  echo "Enter commit comment"
+  read comment
+  git commit -m "$comment"
+  git push
+else
+  echo "Nothing to commit!"
+fi
