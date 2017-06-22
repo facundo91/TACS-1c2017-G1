@@ -1,6 +1,14 @@
+echo "Commit bundle.js? (y/n)"
+read commitBundle
+
+if [ "$commitBundle" = "y" ]; then
+  git update-index --no-assume-unchanged src/main/resources/static/bundle.js
+  git update-index --no-assume-unchanged src/main/resources/static/style.css
+else
+  git update-index --assume-unchanged src/main/resources/static/bundle.js
+  git update-index --assume-unchanged src/main/resources/static/style.css
+fi
 git add -A
-git add --force src/main/resources/static/style.css
-git add --force src/main/resources/static/bundle.js
 echo "Enter commit comment"
 read comment
 git commit -m "$comment"
