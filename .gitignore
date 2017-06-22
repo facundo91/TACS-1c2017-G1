@@ -5,6 +5,8 @@
 
 # Package Files #
 *.ear
+*.war
+*.jar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 */target/**
@@ -15,9 +17,5 @@
 */.idea
 *.iml
 logs/
-
-**/*bundle.js
-**/bundle.js
-*/*bundle.js
-*/bundle.js
-**/**bundle.js
+**style.css
+**/node_modules/
