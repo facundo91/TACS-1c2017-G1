@@ -8,6 +8,7 @@ myApp.config(function($stateProvider) {
       views: {
         'container@': {
           templateUrl: 'templates/home.html'
+          
         }
       }
     },
@@ -539,7 +540,7 @@ myApp.controller('listController', function ($rootScope, $scope, $state, $stateP
             l.selected = false;
         })
     }
-    
+
     self.getActores = function (id) {
         ListService.getAct($rootScope.sesionActual, id,
             function (response) {
