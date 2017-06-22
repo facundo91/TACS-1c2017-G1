@@ -1,7 +1,10 @@
+mkdir -p logs
+FILE="logs/deploy-`date --iso-8601=seconds`.log"
+touch $FILE
+echo "[`date --iso-8601=seconds`]: Hello" >> $FILE
 cat src/main/resources/asciiart.txt
-
 echo "Compilar front end? Necesita tener instalado npm (y/n)"
-read -t 30 front
+read front
 
 if [ "$front" = "y" ]; then
 #Compiling the front-end
@@ -13,12 +16,13 @@ fi
 
 
 echo "Compilar back end? (y/n)"
-read -t 30 back
+read back
 
 if [ "$back" = "y" ]; then
 #Install the project
 echo 'Making project'
-mvn clean install -DskipTests -P openshift
+mvn clean install -DskipTests -P openshift |& tee -a $FILE
+#echo "[`date --iso-8601=seconds`]: `mvn clean install -DskipTests -P openshift`" >> $FILE
 #Move the Web Archive File to the Tomcat root
 echo 'Moving WAR to Tomcat root'
 sudo cp webapps/*.war /opt/tomcat/webapps/
@@ -30,5 +34,5 @@ echo 'Openning browser for you'
 xdg-open http://localhost:8080/
 #See logs
 echo 'Showing Logs'
-sudo tail -f /opt/tomcat/logs/catalina.out
+sudo less +F /opt/tomcat/logs/catalina.out
 fi
