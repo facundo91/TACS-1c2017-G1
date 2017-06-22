@@ -26,10 +26,10 @@ if [[ $back = [Yy] ]]; then
   sudo cp webapps/*.war /opt/tomcat/webapps/
   #Removing target folder
   echo 'Removing target folder'
-  rm -rf target/
+  #rm -rf target/
   #Open the project main url (Could be too early)
   echo 'Openning browser for you'
-  xdg-open http://localhost:8080/
+  #xdg-open http://localhost:8081/
   #See logs
   echo 'Showing Logs'
   sudo less +F /opt/tomcat/logs/catalina.out
