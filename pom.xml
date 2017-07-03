@@ -121,7 +121,7 @@
 		<profile>
 			<id>openshift</id>
 			<build>
-				<finalName>ROOT</finalName>
+				<finalName>TACS-1c2017-G1</finalName>
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -132,7 +132,7 @@
 								<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
 							</archive> -->
 							<failOnMissingWebXml>false</failOnMissingWebXml>
-							<outputDirectory>webapps</outputDirectory>
+							<outputDirectory>target</outputDirectory>
 							<warName>ROOT</warName>
 						</configuration>
 					</plugin>
