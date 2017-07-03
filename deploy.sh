@@ -23,7 +23,7 @@ if [[ $back = [Yy] ]]; then
   mvn clean install -DskipTests -P openshift
   #Move the Web Archive File to the Tomcat root
   echo 'Moving WAR to Tomcat root'
-  sudo cp webapps/*.war /opt/tomcat/webapps/
+  sudo cp target/ROOT.war /opt/tomcat/webapps/
   #Removing target folder
   echo 'Removing target folder'
   #rm -rf target/
