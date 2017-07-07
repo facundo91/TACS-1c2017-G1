@@ -29,7 +29,7 @@ if [[ $back = [Yy] ]]; then
   #rm -rf target/
   #Open the project main url (Could be too early)
   echo 'Openning browser for you'
-  #xdg-open http://localhost:8081/
+  xdg-open http://localhost:8080/
   #See logs
   echo 'Showing Logs'
   sudo less +F /opt/tomcat/logs/catalina.out

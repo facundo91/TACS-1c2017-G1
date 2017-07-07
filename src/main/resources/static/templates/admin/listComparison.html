@@ -16,7 +16,9 @@
         <div class="panel panel-default panel-info panel-modest">
             <div class="panel-heading">Películas encontradas</div>
             <div class="panel-body" ng-repeat="movie in listCompCTRL.intersection">
-                <p>{{movie.title}}<br></p>
+              <a ui-sref="fichaPelicula({fichaId:movie.id})">
+                <p>{{movie.title}}<br/></p>
+              </a>
             </div>
         </div>
     </div>
