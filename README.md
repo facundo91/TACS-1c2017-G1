@@ -11,6 +11,18 @@ Deployado en [Openshift](http://tmdbapi-tmdb1.1d35.starter-us-east-1.openshiftap
   Ir a la perspectiva Git y agregar el proyecto existente.
   Luego en la perspectiva Java, importar el proyecto como un proyecto Maven.
   
+### Requisitos para Deployar Localmente, tener instalado:
+  * Tomcat instalado y corriendo como servicio;
+  
+  * MongoDB instalado, corriendo como servicio, ademas es necesario modificar el archivo /src/main/java/app/MongoConfig.java para que quede así: 
+    ```
+    return new MongoClient("127.0.0.1", 27017);
+    //return new MongoClient(new MongoClientURI("mongodb://facundo:grupo1@mongodb/tmdb-g1"));
+    ```
+  * NodeJS y NPM, solo necesarios si haces algun cambio en javascript y necesitas rebuildear el bundle.js;
+  
+  * Maven 3 instalado;
+  
 ### Para levantarlo: 
   ```
   chmod +x deploy.sh
