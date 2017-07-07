@@ -108,7 +108,7 @@ public class UserService {
         List<Actor> actoresFav = usuario.getFavoriteActors();
 
         //Si solo tengo un actor o ninguno me devuelve vacio.
-        if (actoresFav.size() <= 1 )
+        if (actoresFav.size() <= 1)
             return listPelConMasDeUnActorFav;
 
         List<Movie> peliculas = new ArrayList<>();
@@ -120,8 +120,8 @@ public class UserService {
 
         for (Movie movie : peliculas) {
 
-            for(Actor actorFav : actoresFav){
-                if(movie.getCast().stream().anyMatch(x -> x.getActorId().equals(actorFav.getId()))){
+            for (Actor actorFav : actoresFav) {
+                if (movie.getCast().stream().anyMatch(x -> x.getActorId().equals(actorFav.getId()))) {
                     cantActores++;
                 }
             }
@@ -147,7 +147,7 @@ public class UserService {
         return usuario.getLists().stream().map(movieList -> repositorioDeListas.findOne(movieList.getId())).collect(Collectors.toList());
     }
 
-    public List<Actor> rankingDeActoresPorMayorRepeticion(String token, String idlistaDePeliculas) {
+    public List<String> rankingDeActoresPorMayorRepeticion(String token, String idlistaDePeliculas) {
         User usuario = sesionesService.obtenerUsuarioPorToken(token);
 
         MovieList listaDePeliculas = getListasCompletasDelUsuario(usuario).stream()
@@ -156,21 +156,21 @@ public class UserService {
 
         List<ActorEnPelicula> actoresEnPeliculas = obtenerTodosLosActoresEnPeliculas(listaDePeliculas.getMovies());
 
-        Map<Actor, Integer> aparicionDeActores = mapearPorRepeticionesLosActoresEnPeliculas(
-                actoresEnPeliculas);
+        Map<String, Integer> aparicionDeActores = mapearPorRepeticionesLosActoresEnPeliculas(actoresEnPeliculas);
 
-        List<Actor> actoresOrdenados = aparicionDeActores.entrySet().stream()
+        List<String> actoresOrdenados = aparicionDeActores.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).map(Map.Entry::getKey)
                 .collect(Collectors.toList());
-        // TODO en el futuro podemos ver la posibilidad de devolver actor en vez
-        // de actorENPelicula.
+
         return actoresOrdenados;
     }
 
-    private Map<Actor, Integer> mapearPorRepeticionesLosActoresEnPeliculas(
-            List<ActorEnPelicula> actoresEnPeliculas) {
-        Map<Actor, Integer> aparicionDeActores = new HashMap<>();
-        actoresEnPeliculas.forEach(actorEnPelicula -> evaluarApariciones(actorEnPelicula.getActorId(), aparicionDeActores));
+    private Map<String, Integer> mapearPorRepeticionesLosActoresEnPeliculas(List<ActorEnPelicula> actoresEnPeliculas) {
+
+        Map<String, Integer> aparicionDeActores = new HashMap<>();
+
+        actoresEnPeliculas.forEach(actorEnPelicula -> evaluarApariciones(actorEnPelicula, aparicionDeActores));
+
         return aparicionDeActores;
     }
 
@@ -180,16 +180,16 @@ public class UserService {
         return actoresEnPeliculas;
     }
 
-    private void evaluarApariciones(String idActor, Map<Actor, Integer> aparicionDeActores) {
+    private void evaluarApariciones(ActorEnPelicula actor, Map<String, Integer> aparicionDeActores) {
 
         try {
-            Actor actor = new Actor(idActor.toString());
-            if (aparicionDeActores.containsKey(actor)) {
-                Integer valor = aparicionDeActores.get(actor);
-                aparicionDeActores.replace(actor, ++valor);
+//            Actor actor = new Actor(idActor.toString());
+            if (aparicionDeActores.containsKey(actor.getName())) {
+                Integer valor = aparicionDeActores.get(actor.getName());
+                aparicionDeActores.replace(actor.getName(), ++valor);
             } else
-                aparicionDeActores.put(actor, 1);
-        } catch (JSONException | IOException e) {
+                aparicionDeActores.put(actor.getName(), 1);
+        } catch (JSONException e) {
             System.out.println(e.getMessage());
         }
     }
