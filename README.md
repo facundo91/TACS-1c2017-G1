@@ -1,5 +1,5 @@
 # TACS-1c2017-G1
-
+Deployado en [Openshift](http://tmdbapi-tmdb1.1d35.starter-us-east-1.openshiftapps.com/)
 ## Help
 ### Clonar Proyecto:
   En la carpeta donde se desea clonar:
@@ -11,7 +11,7 @@
   Ir a la perspectiva Git y agregar el proyecto existente.
   Luego en la perspectiva Java, importar el proyecto como un proyecto Maven.
   
-###Para levantarlo: 
+### Para levantarlo: 
   ```
   chmod +x deploy.sh
   ./deploy.sh
