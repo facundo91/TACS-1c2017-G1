@@ -3,6 +3,7 @@
  */
 package app.service;
 
+import app.service.impl.AdministrativoServiceImpl;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class TestAdministrativo {
 
 	@Test
 	public void testAdministrativoService() throws Exception {
-		AdministrativoService administrativoService = new AdministrativoService();
+		AdministrativoServiceImpl administrativoService = new AdministrativoServiceImpl();
 		assertNotNull(administrativoService);
 	}
 

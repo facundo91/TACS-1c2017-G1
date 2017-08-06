@@ -3,6 +3,7 @@
  */
 package app.service;
 
+import app.service.impl.SesionesServiceImpl;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
@@ -23,7 +24,7 @@ public class TestSesiones {
 
 	@Test
 	public void testGestionadorSesiones() throws Exception {
-		SesionesService sersionesService = new SesionesService();
+		SesionesServiceImpl sersionesService = new SesionesServiceImpl();
 		assertNotNull(sersionesService);
 	}
 

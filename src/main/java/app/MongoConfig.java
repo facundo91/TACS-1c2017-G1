@@ -16,7 +16,7 @@ import java.util.List;
 //@EnableMongoRepositories(basePackages = "app.repositories")
 public class MongoConfig extends AbstractMongoConfiguration {
 
-    private final List<Converter<?, ?>> converters = new ArrayList<Converter<?, ?>>();
+    private final List<Converter<?, ?>> converters = new ArrayList<>();
 
     @Override
     protected String getDatabaseName() {

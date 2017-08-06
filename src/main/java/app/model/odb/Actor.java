@@ -1,6 +1,3 @@
-/**
- * 
- */
 package app.model.odb;
 
 import app.model.tmdb.TMDbStatic;
@@ -27,8 +24,8 @@ public class Actor {
 	@Id
 	private String id;
 	private String name;
-	private List<Image> profiles = new ArrayList<Image>();
-	private List<ActorEnPelicula> actorEnPeliculas = new ArrayList<ActorEnPelicula>();
+	private List<Image> profiles = new ArrayList<>();
+	private List<ActorEnPelicula> actorEnPeliculas = new ArrayList<>();
 	private String bio;
 	private JSONObject jsonResponse;
 	private int statusCode;
@@ -38,8 +35,8 @@ public class Actor {
 	public Actor(String id) throws JSONException, IOException {
 		this.setJsonResponse(TMDbStatic.getResource2("person", id));
 		try {
-			this.setId(String.valueOf(this.getJsonResponse().getInt("id")));
-			this.setName(this.getJsonResponse().getString("name"));
+			this.id = String.valueOf(this.getJsonResponse().getInt("id"));
+			this.name = this.getJsonResponse().getString("name");
 			this.setBio(this.getJsonResponse().getString("biography"));
 			this.setImages(id);
 			this.setActorEnPeliculas(id);

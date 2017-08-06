@@ -1,6 +1,3 @@
-/**
- * 
- */
 package app.model.odb;
 
 import app.model.tmdb.TMDbStatic;
@@ -9,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.mongodb.morphia.annotations.Id;
-import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.IOException;

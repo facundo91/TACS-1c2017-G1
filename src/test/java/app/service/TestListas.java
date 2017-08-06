@@ -3,6 +3,7 @@
  */
 package app.service;
 
+import app.service.impl.ListasServiceImpl;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
@@ -23,7 +24,7 @@ public class TestListas {
 
 	@Test
 	public void testListasService() throws Exception {
-		ListasService listasService = new ListasService();
+		ListasServiceImpl listasService = new ListasServiceImpl();
 		assertNotNull(listasService);
 	}
 

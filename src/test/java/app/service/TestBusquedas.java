@@ -3,6 +3,7 @@
  */
 package app.service;
 
+import app.service.impl.BusquedasServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -26,12 +27,12 @@ public class TestBusquedas {
 
 	@Test
 	public void testBusquedasService() throws Exception {
-		assertNotNull(BusquedasService.class);
+		assertNotNull(BusquedasServiceImpl.class);
 	}
 
 //	@Test()
 //	public void testBuscarPorNombre() throws Exception {
-//		BusquedasService bs = new BusquedasService();
+//		BusquedasServiceImpl bs = new BusquedasServiceImpl();
 //		bs.buscarPorNombre("Chaplin", "1234", null).get("statusCode");
 //	}
 

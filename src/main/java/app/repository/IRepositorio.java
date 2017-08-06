@@ -1,4 +1,4 @@
-package app.repositories;
+package app.repository;
 
 /**
  * Created by Rodrigo on 11/04/2017.

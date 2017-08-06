@@ -1,6 +1,3 @@
-/**
- *
- */
 package app.model.odb;
 
 import com.querydsl.core.annotations.QueryEntity;

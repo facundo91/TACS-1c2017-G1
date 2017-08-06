@@ -1,4 +1,4 @@
-package app.repositories;
+package app.repository;
 
 import app.model.odb.Movie;
 import org.springframework.data.mongodb.repository.MongoRepository;
