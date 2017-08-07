@@ -1,4 +1,4 @@
-package app.web.controller;
+package app.controller.rest;
 
 import app.service.BusquedasService;
 import org.json.JSONArray;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/search")
-public class BusquedasController {
+public class BusquedasRestController {
 
     @Autowired
     private BusquedasService servicioBusquedas;

@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.model.odb.MovieList;
+import app.domain.MovieList;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

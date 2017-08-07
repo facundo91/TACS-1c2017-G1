@@ -1,8 +1,8 @@
 package app.service.impl;
 
-import app.model.odb.Movie;
-import app.model.odb.MovieList;
-import app.model.odb.User;
+import app.domain.Movie;
+import app.domain.MovieList;
+import app.domain.User;
 import app.repository.RepositorioDeListas;
 import app.repository.RepositorioDePeliculasEnListas;
 import app.repository.RepositorioDeUsuarios;

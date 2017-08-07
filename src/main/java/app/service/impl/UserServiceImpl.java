@@ -1,7 +1,12 @@
 package app.service.impl;
 
+import app.domain.Actor;
+import app.domain.Movie;
+import app.domain.Credencial;
+import app.domain.ActorEnPelicula;
+import app.domain.User;
+import app.domain.MovieList;
 import app.model.dto.RespuestaDto;
-import app.model.odb.*;
 import app.repository.RepositorioDeActores;
 import app.repository.RepositorioDeListas;
 import app.repository.RepositorioDeUsuarios;

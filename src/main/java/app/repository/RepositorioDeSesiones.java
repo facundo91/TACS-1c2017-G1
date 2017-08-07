@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.model.odb.Sesion;
+import app.domain.Sesion;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

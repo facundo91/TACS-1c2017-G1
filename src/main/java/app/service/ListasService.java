@@ -5,8 +5,8 @@
  */
 package app.service;
 
-import app.model.odb.Movie;
-import app.model.odb.MovieList;
+import app.domain.Movie;
+import app.domain.MovieList;
 import java.util.List;
 
 /**

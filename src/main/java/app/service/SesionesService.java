@@ -5,9 +5,9 @@
  */
 package app.service;
 
-import app.model.odb.Credencial;
-import app.model.odb.Sesion;
-import app.model.odb.User;
+import app.domain.Credencial;
+import app.domain.Sesion;
+import app.domain.User;
 
 /**
  *

@@ -1,5 +1,6 @@
 package app.model.odb;
 
+import app.domain.Sesion;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

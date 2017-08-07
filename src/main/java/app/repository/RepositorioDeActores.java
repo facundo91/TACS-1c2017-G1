@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.model.odb.Actor;
+import app.domain.Actor;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

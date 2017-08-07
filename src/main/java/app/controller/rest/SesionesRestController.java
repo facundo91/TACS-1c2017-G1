@@ -1,7 +1,7 @@
-package app.web.controller;
+package app.controller.rest;
 
-import app.model.odb.Credencial;
-import app.model.odb.Sesion;
+import app.domain.Credencial;
+import app.domain.Sesion;
 import app.service.SesionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -12,7 +12,7 @@ import java.io.IOException;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/authentication")
-public class SesionesController {
+public class SesionesRestController {
 
     @Autowired
     private SesionesService servicioDeSesiones;

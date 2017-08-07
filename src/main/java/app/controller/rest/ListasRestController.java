@@ -1,7 +1,7 @@
-package app.web.controller;
+package app.controller.rest;
 
-import app.model.odb.Movie;
-import app.model.odb.MovieList;
+import app.domain.Movie;
+import app.domain.MovieList;
 import app.service.ListasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping(value = "/api/list")
-public class ListasController {
+public class ListasRestController {
 
     @Autowired
     private ListasService listasService;

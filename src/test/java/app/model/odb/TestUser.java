@@ -3,6 +3,11 @@
  */
 package app.model.odb;
 
+import app.domain.Credencial;
+import app.domain.MovieList;
+import app.domain.User;
+import app.domain.Actor;
+import app.domain.Movie;
 import edu.emory.mathcs.backport.java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;

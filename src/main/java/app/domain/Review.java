@@ -1,6 +1,4 @@
-package app.model.odb;
-
-import org.json.JSONObject;
+package app.domain;
 
 /**
  * @author facundo91

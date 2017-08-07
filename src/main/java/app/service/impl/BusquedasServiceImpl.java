@@ -4,14 +4,17 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.model.tmdb.TMDbStatic;
 import app.service.BusquedasService;
+import app.service.TmdbService;
 
 @Service
 public class BusquedasServiceImpl implements BusquedasService {
 
     @Autowired
     private SesionesServiceImpl sesionesService;
+
+    @Autowired
+    private TmdbService tmdbService;
 
     /*
 	public static MovieList buscarPeliculaPorNombre(String query) throws Exception {
@@ -27,7 +30,7 @@ public class BusquedasServiceImpl implements BusquedasService {
     @Override
     public JSONObject buscarPeliculaPorNombreJson(String query, String token, String page) throws Exception {
         sesionesService.obtenerUsuarioPorToken(token);
-        return TMDbStatic.getResource("search/movie", query, page);
+        return tmdbService.getResource("search/movie", query, page);
     }
 
     /*
@@ -45,13 +48,13 @@ public class BusquedasServiceImpl implements BusquedasService {
     @Override
     public JSONObject buscarActorPorNombreJson(String query, String token, String page) throws Exception {
         sesionesService.obtenerUsuarioPorToken(token);
-        return TMDbStatic.getResource("search/person", query, page);
+        return tmdbService.getResource("search/person", query, page);
     }
 
     @Override
     public JSONObject buscarPorNombre(String query, String token, String page) throws Exception {
         sesionesService.obtenerUsuarioPorToken(token);
-        return TMDbStatic.getResource("search/multi", query, page);
+        return tmdbService.getResource("search/multi", query, page);
     }
 
 }

@@ -5,7 +5,7 @@
  */
 package app.repository;
 
-import app.model.odb.Movie;
+import app.domain.Movie;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

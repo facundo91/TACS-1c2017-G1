@@ -1,4 +1,4 @@
-package app.model.odb;
+package app.domain;
 
 /**
  * Created by aye on 31/03/17.
@@ -31,10 +31,11 @@ public class Credencial {
         return credencial;
     }
 
-    public Boolean esInvalida(){
+    public Boolean esInvalida() {
         return this.getPassword().isEmpty() || this.getUsername().isEmpty();
     }
 
-    public Credencial() {}
+    public Credencial() {
+    }
 
 }

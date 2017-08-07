@@ -1,9 +1,9 @@
 package app.service.impl;
 
-import app.model.odb.Credencial;
-import app.model.odb.Sesion;
-import app.model.odb.TokenGenerator;
-import app.model.odb.User;
+import app.domain.Credencial;
+import app.domain.Sesion;
+import app.domain.TokenGenerator;
+import app.domain.User;
 import app.repository.RepositorioDeSesiones;
 import app.repository.RepositorioDeUsuarios;
 import app.service.SesionesService;

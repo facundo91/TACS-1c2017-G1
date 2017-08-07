@@ -1,9 +1,10 @@
-package app.model.odb;
+package app.domain;
 
 /**
  * Created by Rodrigo on 08/04/2017.
  */
 public class Sesion {
+
     private String idSesion;
     private String username;
     private Boolean estaActiva;
@@ -38,7 +39,7 @@ public class Sesion {
     public Sesion() {
     }
 
-    public static Sesion create(String username, Boolean esAdmin){
+    public static Sesion create(String username, Boolean esAdmin) {
 
         Sesion sesion = new Sesion();
         sesion.setIdSesion(generadorDeTokens.generateToken(username, esAdmin));

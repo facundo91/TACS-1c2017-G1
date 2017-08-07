@@ -5,7 +5,7 @@
  */
 package app.service;
 
-import app.model.odb.Movie;
+import app.domain.Movie;
 
 /**
  *

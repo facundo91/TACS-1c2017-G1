@@ -5,7 +5,7 @@
  */
 package app.service.impl;
 
-import app.model.odb.Movie;
+import app.domain.Movie;
 import app.repository.MovieRepository;
 import app.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;

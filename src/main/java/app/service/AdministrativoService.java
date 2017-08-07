@@ -1,7 +1,7 @@
 package app.service;
 
-import app.model.odb.Movie;
-import app.model.odb.User;
+import app.domain.Movie;
+import app.domain.User;
 import app.service.impl.AdministrativoServiceImpl;
 import java.util.List;
 

@@ -6,11 +6,11 @@
 package app.service;
 
 import app.model.dto.RespuestaDto;
-import app.model.odb.Actor;
-import app.model.odb.Credencial;
-import app.model.odb.Movie;
-import app.model.odb.MovieList;
-import app.model.odb.User;
+import app.domain.Actor;
+import app.domain.Credencial;
+import app.domain.Movie;
+import app.domain.MovieList;
+import app.domain.User;
 import java.io.IOException;
 import java.util.List;
 import org.json.JSONException;

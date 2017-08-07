@@ -1,14 +1,14 @@
-package app.web.controller;
+package app.controller.rest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import app.model.odb.Actor;
+import app.domain.Actor;
 
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/person")
-public class ActorController {
+public class ActorRestController {
 
     @GetMapping(value = "/{id}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)

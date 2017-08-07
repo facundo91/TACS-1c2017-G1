@@ -1,7 +1,7 @@
-package app.web.controller;
+package app.controller.rest;
 
-import app.model.odb.Movie;
-import app.model.odb.User;
+import app.domain.Movie;
+import app.domain.User;
 import app.service.AdministrativoService;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/admin/user")
-public class AdministrativoController {
+public class AdministrativoRestController {
 
     @Autowired
     private AdministrativoService adminService;

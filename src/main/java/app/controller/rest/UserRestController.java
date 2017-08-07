@@ -1,10 +1,10 @@
-package app.web.controller;
+package app.controller.rest;
 
 import app.model.dto.RespuestaDto;
-import app.model.odb.Actor;
-import app.model.odb.Credencial;
-import app.model.odb.Movie;
-import app.model.odb.MovieList;
+import app.domain.Actor;
+import app.domain.Credencial;
+import app.domain.Movie;
+import app.domain.MovieList;
 import app.service.UserService;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/user")
-public class UserController {
+public class UserRestController {
 
     @Autowired
     private UserService servicioDeUsuario;
